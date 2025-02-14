@@ -49,9 +49,9 @@ export default function LoginPage() {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-green-900 flex items-center justify-center p-4"
+      className="min-h-screen bg-white flex items-center justify-center p-4"
     >
-      <Card className="w-full max-w-md bg-gray-800 text-white border-gray-700">
+      <Card className="w-full max-w-md bg-gray-100 text-black border-gray-700">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold">تسجيل الدخول</CardTitle>
         </CardHeader>
@@ -67,7 +67,7 @@ export default function LoginPage() {
                 type="email"
                 required
                 placeholder="ادخل البريد الإلكتروني"
-                className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                className="bg-gray-200 border-gray-600 text-white placeholder:text-gray-400"
                 value={formData.email}
                 onChange={handleInputChange}
                 disabled={isLoading}
@@ -84,7 +84,7 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   required
                   placeholder="ادخل كلمة المرور"
-                  className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                  className="bg-gray-200 border-gray-600 text-white placeholder:text-gray-400"
                   value={formData.password}
                   onChange={handleInputChange}
                   disabled={isLoading}
@@ -108,8 +108,9 @@ export default function LoginPage() {
               <div className="text-red-500 text-sm text-center">{error}</div>
             )}
             <Button
+            variant={'default'}
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white"
+              className="w-full  text-white"
               disabled={isLoading}
             >
               {isLoading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}

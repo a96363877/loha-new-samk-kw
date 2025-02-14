@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ar } from 'date-fns/locale';
+
 import { formatDistanceToNow } from 'date-fns';
 import {
   Dialog,
@@ -27,7 +29,6 @@ import {
 } from 'firebase/firestore';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { playNotificationSound } from '@/lib/actions';
-import IPLocation from '@/components/ip';
 
 interface Notification {
   id: string;
@@ -165,14 +166,14 @@ export default function NotificationsPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-green-900 text-white flex items-center justify-center">
+      <div className="min-h-screen bg-white-900 text-black flex items-center justify-center">
         جاري التحميل...
       </div>
     );
   }
 
   return (
-    <div dir="rtl" className="min-h-screen bg-green-900 text-white p-4">
+    <div dir="rtl" className="min-h-screen bg-gray-300 text-black p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
           <h1 className="text-xl font-semibold mb-4 sm:mb-0">جميع الإشعارات</h1>
@@ -188,17 +189,17 @@ export default function NotificationsPage() {
             <Button
               variant="outline"
               onClick={handleLogout}
-              className="bg-gray-700 hover:bg-gray-600"
+              className="bg-gray-100 hover:bg-gray-100"
             >
               تسجيل الخروج
             </Button>
           </div>
         </div>
 
-        <div className="bg-gray-800 rounded-lg overflow-x-auto">
+        <div className="bg-gray-100 rounded-lg overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-700">
+              <tr className="border-b border-gray-100">
                 <th className="px-4 py-3 text-right">الإسم</th>
                 <th className="px-4 py-3 text-right">المعلومات</th>
                 <th className="px-4 py-3 text-right">الصفحة الحالية</th>
@@ -278,7 +279,7 @@ export default function NotificationsPage() {
       </div>
 
       <Dialog open={selectedInfo !== null} onOpenChange={closeDialog}>
-        <DialogContent className="bg-gray-800 text-white" dir="rtl">
+        <DialogContent className="bg-gray-100 text-black" dir="rtl">
           <DialogHeader>
             <DialogTitle dir="rtl">
               {selectedInfo === 'personal'
