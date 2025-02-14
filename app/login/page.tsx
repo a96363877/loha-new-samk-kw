@@ -51,7 +51,7 @@ export default function LoginPage() {
       dir="rtl"
       className="min-h-screen bg-gray-900 flex items-center justify-center p-4"
     >
-      <Card className="w-full max-w-md bg-gray-800 text-white border-gray-700">
+      <Card className="w-full max-w-md bg-gray-800 text-black border-gray-700">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold">تسجيل الدخول</CardTitle>
         </CardHeader>
@@ -67,7 +67,7 @@ export default function LoginPage() {
                 type="email"
                 required
                 placeholder="ادخل البريد الإلكتروني"
-                className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                className="bg-gray-700 border-gray-600 text-black placeholder:text-gray-400"
                 value={formData.email}
                 onChange={handleInputChange}
                 disabled={isLoading}
@@ -84,7 +84,7 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'}
                   required
                   placeholder="ادخل كلمة المرور"
-                  className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                  className="bg-gray-700 border-gray-600 text-black placeholder:text-gray-400"
                   value={formData.password}
                   onChange={handleInputChange}
                   disabled={isLoading}
